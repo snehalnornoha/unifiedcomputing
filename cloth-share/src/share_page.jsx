@@ -283,6 +283,7 @@ function SharePage(props) {
             const send_req_like = async()=>{
             console.log("sending liked")
             await send_liked(item?.id,true)
+            props.wishList.current.check = true
             }
             
             send_req_like()

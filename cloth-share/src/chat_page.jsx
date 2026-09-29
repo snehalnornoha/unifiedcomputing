@@ -231,6 +231,7 @@ function Chat_page(prop){
     <div ref= {chat_home} className="chat-home">
             <span className="chat-search" >Total friends : {friends.length||0}</span>
             <input className="chat-search" type="text" placeholder="SEARCH" />
+            {friends.length === 0 && <p>friends will only be added when both requester and owner are agrreed to swap</p>}
             
             
             {friends?.map((friend, index) => {
