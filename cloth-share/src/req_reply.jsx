@@ -3,7 +3,7 @@ import  "./share_page.css";
 import profile_img from "./assets/react.svg";
 import { refrsh_jwt_token} from './controlers.jsx';import { useNavigate } from "react-router-dom";
 import { Loading } from "./Kart.jsx";
-;
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 function Reply_req(prop){
@@ -45,7 +45,7 @@ function Reply_req(prop){
             const load_owner =async (is_refresh)=>{ 
 
                 try{
-                const res = await fetch("http://localhost:8000/protectedApi/get_owner_info_multi", {
+                const res = await fetch(`${API_URL}/protectedApi/get_owner_info_multi`, {
                     method: "POST",
                     credentials: "include",
                     headers:{
@@ -115,7 +115,7 @@ function Reply_req(prop){
         console.log("shit of time",declined_id ,show_item.swrq_id )
            try {
                        console.log("iam here")
-                       const res = await fetch("http://localhost:8000/protectedApi/acceptreq", {
+                       const res = await fetch(`${API_URL}/protectedApi/acceptreq`, {
                            method:"POST",
                            credentials: "include",
                            headers :{
@@ -168,7 +168,7 @@ function Reply_req(prop){
     
           try {
                        console.log("iam here")
-                       const res = await fetch("http://localhost:8000/protectedApi/swap_request", {
+                       const res = await fetch(`${API_URL}/protectedApi/swap_request`, {
                            method:"DELETE",
                            credentials: "include",
                            headers :{

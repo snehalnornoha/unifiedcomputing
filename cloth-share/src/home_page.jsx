@@ -5,7 +5,7 @@ import { useEffect, useRef , useState} from "react";
 import SharePage from "./share_page";
 import {refrsh_jwt_token ,get_my_Request} from './controlers.jsx'
 import Edit_profile from "./Edit_profile.jsx";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -87,7 +87,7 @@ function Start_page(prop){
             
             
         try {
-            const res = await fetch("http://localhost:8000/protectedApi/get_user_info", {
+            const res = await fetch(`${API_URL}/protectedApi/get_user_info`, {
                 method: "GET",
                 credentials: "include",
             });
@@ -171,7 +171,7 @@ function Start_page(prop){
         const load = async()=>{
         try {
 
-          const response = await fetch(`http://localhost:8000/api/load_clothes`,
+          const response = await fetch(`${API_URL}/api/load_clothes`,
             {
               method:"POST",
               headers: {

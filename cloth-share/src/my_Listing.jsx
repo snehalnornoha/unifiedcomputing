@@ -4,12 +4,13 @@ import {Kart_card, Loading}  from './Kart.jsx'
 import { refrsh_jwt_token,get_my_Listing ,get_my_Request} from './controlers.jsx';
 import SharePage from "./share_page";
 import Reply_req from './req_reply.jsx';
+const API_URL = import.meta.env.VITE_API_URL;
 
 
  const all_resreqs_call = async(one_time_refresh)=>{
     console.log("in fecth ")
      try {
-                const res = await fetch("http://localhost:8000/protectedApi/all_resreqs", {
+                const res = await fetch(`${API_URL}/protectedApi/all_resreqs`, {
                     method: "GET",
                     credentials: "include",
                 });
@@ -116,7 +117,7 @@ function MyListing(prop){
          setIsloading(true)
       try {
              console.log("iam here")
-             const res = await fetch("http://localhost:8000/protectedApi/myListing", {
+             const res = await fetch(`${API_URL}/protectedApi/myListing`, {
                  method:"DELETE",
                  credentials: "include",
                  headers :{
@@ -160,7 +161,7 @@ function MyListing(prop){
          setIsloading(true)
       try {
              console.log("iam here")
-             const res = await fetch("http://localhost:8000/protectedApi/swap_request", {
+             const res = await fetch(`${API_URL}/protectedApi/swap_request`, {
                  method:"DELETE",
                  credentials: "include",
                  headers :{

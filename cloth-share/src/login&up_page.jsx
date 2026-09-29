@@ -1,7 +1,7 @@
 import { useActionState, useEffect, useState } from 'react';
 import './login_page.css';
 import {useNavigate ,Link} from "react-router-dom";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 //login fetch function
 const fetch_log = async (un , pass ,cpass,mail,js_send,log_url)=>{
@@ -41,7 +41,7 @@ const handle_Login = async (state , frm_data) =>{
   let  mail = frm_data.get("Email")
   let ilg = frm_data.get("islog")
   let islog  = ilg === "true" ? true : false
-  const log_url = islog ?`http://localhost:8000/api/signup`: `http://localhost:8000/api/login`
+  const log_url = islog ?`${API_URL}/api/signup`: `${API_URL}/api/login`
   const js_send = {username : un , password : pass , gmail : mail };
   const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   

@@ -1,8 +1,10 @@
 import { useActionState, useState,useEffect } from "react";
 import "./forget_pass.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
-const OtpUrl =`http://localhost:8000/api/send-otp`
-const passUrl =`http://localhost:8000/api/verify-otp`
+const OtpUrl =`${API_URL}/api/send-otp`
+const passUrl =`${API_URL}/api/verify-otp`
+
 
 async function verifyOTP(previousState, formData) {
   const email = formData.get("email");

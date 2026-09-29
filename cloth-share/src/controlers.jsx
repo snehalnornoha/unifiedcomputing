@@ -1,8 +1,15 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
+
+
+
+
+
 export async function refrsh_jwt_token(){
-    
+   
     console.log("sending request to srver for jwt")
     try{
-        const res = await fetch("http://localhost:8000/api/refresh_token", {
+        const res = await fetch(`${API_URL}/api/refresh_token`, {
             credentials: "include"
         })
         if(res.ok){
@@ -27,7 +34,7 @@ export async function get_my_Listing(is_refresh) {
     
     try {
         console.log("iam here")
-        const res = await fetch("http://localhost:8000/protectedApi/get_myListings", {
+        const res = await fetch(`${API_URL}/protectedApi/get_myListings`, {
             credentials: "include"
         });
       
@@ -60,7 +67,7 @@ export async function get_my_Request(is_refresh) {
     
     try {
         console.log("iam here")
-        const res = await fetch("http://localhost:8000/protectedApi/get_myReuests", {
+        const res = await fetch(`${API_URL}/protectedApi/get_myRequests`, {
             credentials: "include"
         });
         console.log(res)
@@ -98,7 +105,7 @@ export async function get_my_Kart(iswish,ishist,is_refresh) {
     
     try {
         console.log("iam here")
-        const res = await fetch("http://localhost:8000/protectedApi/get_myKart", {
+        const res = await fetch(`${API_URL}/protectedApi/get_myKart`, {
             method:"POST",
             credentials: "include",
             headers :{
@@ -137,7 +144,7 @@ export async function get_my_WishList(is_refresh) {
     
     try {
         console.log("iam here")
-        const res = await fetch("http://localhost:8000/protectedApi/get_my_WishList", {
+        const res = await fetch(`${API_URL}/protectedApi/get_my_WishList`, {
             credentials: "include"
         });
         console.log(res)
@@ -168,7 +175,7 @@ export async function get_my_WishList(is_refresh) {
 
 export const send_liked = async (prduct_id,is_refresh) => {
     try {
-        const res = await fetch("http://localhost:8000/protectedApi/like_update", {
+        const res = await fetch(`${API_URL}/protectedApi/like_update`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

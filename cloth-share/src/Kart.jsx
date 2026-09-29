@@ -1,7 +1,7 @@
 import { useEffect, useState ,useRef } from 'react';
 import './Kart.css'
 import def_imag from './assets/def_img.png'
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 

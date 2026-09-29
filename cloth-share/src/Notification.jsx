@@ -3,6 +3,7 @@ import './Notification.css';
 import {useNavigate ,Link} from "react-router-dom";
 
 import { refrsh_jwt_token} from './controlers.jsx';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const NoticCard = ({ notification ,direct }) => {
     console.log(notification)
@@ -44,7 +45,7 @@ function Notificationpage(prop) {
         return()=>{
             const send_seen = async(one_time_refresh)=>{
               try {
-                        const res = await fetch("http://localhost:8000/protectedApi/noti_seen", {
+                        const res = await fetch(`${API_URL}/protectedApi/noti_seen`, {
                             method: "GET",
                             credentials: "include",
                         });

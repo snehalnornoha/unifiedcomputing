@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import imageCompression from "browser-image-compression";
 import { refrsh_jwt_token } from "./controlers";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 const datafields = {
   name: "",
@@ -88,7 +88,7 @@ const handleImages = (e) => {
 
           
                 const res = await fetch(
-                  "http://localhost:8000/protectedApi/cloth_upload",
+                  `${API_URL}/protectedApi/cloth_upload`,
                   {
                     method: "POST",
                     credentials: "include",

@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import  UploadClothing  from'./upload_cloth.jsx'
 import { BrowserRouter, Routes, Route, Link ,useNavigate} from "react-router-dom";
 import { refrsh_jwt_token}  from './controlers.jsx'
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -50,7 +51,7 @@ function App() {
   const logout = async (is_refresh) => {
     console.log("logging out")
     try {
-        const res = await fetch("http://localhost:8000/protectedApi/logout", {
+        const res = await fetch(`${API_URL}/protectedApi/logout`, {
             method: "POST",
             credentials: "include"
         });
@@ -208,7 +209,7 @@ function App() {
 
     if (!islogedin) {return}
 
-    const socket = io("http://localhost:8000", {
+    const socket = io(`${API_URL}`, {
         withCredentials: true
     });
 
@@ -300,7 +301,7 @@ useEffect( ()=> {
     const fetchdata = async(is_refresh)=>{
         try{
             
-            const res = await fetch("http://localhost:8000/protectedApi/all_noti", {
+            const res = await fetch(`${API_URL}/protectedApi/all_noti`, {
                 method: "GET",
                 credentials: "include"
             });
@@ -344,7 +345,7 @@ useEffect( ()=> {
       const fetchdata = async(is_refresh)=>{
           try{
               
-              const res = await fetch("http://localhost:8000/protectedApi/all_chats", {
+              const res = await fetch(`${API_URL}/protectedApi/all_chats`, {
                   method: "GET",
                   credentials: "include"
               });
@@ -397,7 +398,7 @@ useEffect( ()=> {
     const fetchdata = async(is_refresh)=>{
         try{
             
-            const res = await fetch("http://localhost:8000/protectedApi/friends", {
+            const res = await fetch(`${API_URL}/protectedApi/friends`, {
                 method: "GET",
                 credentials: "include"
             });

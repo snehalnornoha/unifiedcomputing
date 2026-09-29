@@ -7,6 +7,7 @@ import { get_my_Listing } from './controlers.jsx';
 import {Kart_card, Loading}  from './Kart.jsx'
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -67,7 +68,7 @@ function SharePage(props) {
         console.log("transaction sendt")
     try{
         console.log("send" ,body_value )
-        const res = await fetch("http://localhost:8000/protectedApi/snd_trnsctn_rqst",{
+        const res = await fetch(`${API_URL}/protectedApi/snd_trnsctn_rqst`,{
             method:"PUT",
             credentials : "include",
             headers:{
@@ -220,7 +221,7 @@ function SharePage(props) {
         console.log(wishList_checker)
         const load_owner =async (is_refresh)=>{ 
             try{
-            const res = await fetch("http://localhost:8000/protectedApi/get_owner_info", {
+            const res = await fetch(`${API_URL}/protectedApi/get_owner_info`, {
                 method: "POST",
                 credentials: "include",
                 headers:{

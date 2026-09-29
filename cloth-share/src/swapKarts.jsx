@@ -7,7 +7,7 @@ import {Kart_card ,Hist_card, Loading}  from './Kart.jsx'
 import { useRef } from 'react';
 import SharePage from "./share_page";
 
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
  
@@ -60,7 +60,7 @@ function Kart(prop){
          setIsloading(true)
       try {
              console.log("iam here")
-             const res = await fetch("http://localhost:8000/protectedApi/wishList", {
+             const res = await fetch(`${API_URL}/protectedApi/wishList`, {
                  method:"DELETE",
                  credentials: "include",
                  headers :{
@@ -120,8 +120,8 @@ function Kart(prop){
     return(
         <div className="myListing_parent">
             <div className="My-list-head">
-                <div className="num-mylist"><span className='head-title'>Wish Lists</span>{myLists.length}</div>
-                <div className="num-mylist"><span className='head-title'>Total swaps complted</span>{myHistory.length}</div>
+                <div className="num-mylist" style={{ gridColumn: "span 2" }}><span className='head-title'>Wish Lists</span>{myLists.length}</div>
+                <div className="num-mylist" style={{ gridColumn: "span 2" }}><span className='head-title'>Total swaps complted</span>{myHistory.length}</div>
                 
             </div>
             <div className="myRequest">

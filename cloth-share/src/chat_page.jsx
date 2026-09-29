@@ -2,7 +2,7 @@ import './chat_page.css'
 import profile from './assets/profile.jpg'
 import { useEffect, useState ,useRef} from 'react';
 import { refrsh_jwt_token } from './controlers';
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -181,7 +181,7 @@ function Chat_page(prop){
                 const delchdata = async(is_refresh)=>{
                         try{
                             
-                            const res = await fetch("http://localhost:8000/protectedApi/chats_read", {
+                            const res = await fetch(`${API_URL}/protectedApi/chats_read`, {
                                 method: "PUT",
                                 credentials: "include",
                                 headers :{

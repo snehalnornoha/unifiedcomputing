@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import profile_img from "./assets/profile.jpg";
 import imageCompression from 'browser-image-compression';
 import { useNavigate} from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 const options = {
   maxSizeMB: 1,             // Maximum size
   maxWidthOrHeight: 1920,   // Resize large images
@@ -14,7 +15,7 @@ const options = {
 
 
 const send_updated_profile = async(data,one_time_refresh)=>{
-    const res = await fetch(`http://localhost:8000/protectedApi/edit_profile`, {
+    const res = await fetch(`${API_URL}/protectedApi/edit_profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -123,7 +124,7 @@ function Edit_profile(prop) {
 
       try{
                             
-        const res = await fetch("http://localhost:8000/protectedApi/updtprofimg", {
+        const res = await fetch(`${API_URL}/protectedApi/updtprofimg`, {
             method: "PUT",
             credentials: "include",
             body : snd_data

@@ -3,6 +3,7 @@ import './final_swap.css'
 import { refrsh_jwt_token } from './controlers';
 import { Loading } from './Kart';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Transctn(prop){
     const tr = prop.tr
@@ -29,7 +30,7 @@ function Transctn(prop){
         
         try{
             
-                const res = await fetch("http://localhost:8000/protectedApi/cmplt_transation", {
+                const res = await fetch(`${API_URL}/protectedApi/cmplt_transation`, {
                     method: "POST",
                     credentials: "include",
                     headers: {
@@ -93,7 +94,7 @@ function Transctn(prop){
         
         try{
             
-                const res = await fetch("http://localhost:8000/protectedApi/cncl_transation", {
+                const res = await fetch(`${API_URL}/protectedApi/cncl_transation`, {
                     method: "POST",
                     credentials: "include",
                     headers: {
@@ -262,7 +263,7 @@ useEffect( ()=> {
     const fetchdata = async(is_refresh)=>{
         try{
         
-            const res = await fetch("http://localhost:8000/protectedApi/transactions", {
+            const res = await fetch(`${API_URL}/protectedApi/transactions`, {
                 method: "GET",
                 credentials: "include"
             });
