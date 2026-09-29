@@ -16,7 +16,7 @@ p_routes.get('/get_user_info',handle_get_user_info)
 p_routes.post('/get_owner_info',handle_get_owner_info)
 p_routes.put('/edit_profile',handle_edit_profile)
 p_routes.get('/get_myListings',send__myListing)
-p_routes.get('/get_myReuests',send__myRequest)
+p_routes.get('/get_myRequests',send__myRequest)
 p_routes.post('/get_myKart',send__myKart)
 p_routes.get('/get_wishList',send__wishList)
 
