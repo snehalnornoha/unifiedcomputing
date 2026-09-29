@@ -98,7 +98,7 @@ const handleImages = (e) => {
                 console.log(res.ok)
                 if(res.ok){
                   const body = await res.json();
-                  prop.need_refresh.current.search = true
+                  prop.need_refresh.current.check= true
                   navi("/myList")
                 }
                 else if (res.status === 401 && is_refresh) {
