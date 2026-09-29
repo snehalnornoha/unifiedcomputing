@@ -1,0 +1,458 @@
+:root{
+    --head-hight : 55px;
+}
+body{
+    background-image: url("./src/assets/clothShareBackground.png") ;
+    background-size: cover;
+    background-position: center top ;
+  
+    margin: 0px;
+   
+   
+}
+
+
+.App_parent{
+   
+     display: flex;
+     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: fit-content;
+    width: 100%;
+    padding: 0px;
+    background-color: aqua;
+    
+
+}
+
+.App-child1{
+    background:rgba(237, 230, 209, 0.797);
+    width: 100%;
+    height: var(--head-hight);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    margin-bottom: 1px;
+    border-radius: 2px;
+    z-index: -1;
+
+
+}
+.bell_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.bell_container div{
+    background-color: red;
+    border: 1px solid rgba(237, 230, 209, 0.797);;
+    font-size: 12px;
+    padding: 1px;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top : 1px;
+    right: 1px;
+}
+
+
+.profile_IMG,
+.app_logo{
+    background-color:transparent;
+   
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.profile_back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border:1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+     border-bottom-left-radius: 1px;
+   
+    
+
+}
+
+.appname2{
+    color: rgba(23, 10, 3, 0.726);
+    font-family:'DM Serif Display', serif;
+    font-size: 30px;
+    
+}
+
+
+/* menu button */
+.Menu_btn{
+    background-color: rgba(9, 9, 63, 0.247);
+    height: 30px;
+    color: rgb(43, 39, 2);
+    width:30px;
+    border: 1px solid rgb(115, 66, 145);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.menu-div2,
+.menu-div3,
+.menu-div{
+    height: 3px;
+    width: 0px;
+    background-color: rgb(97, 77, 17);
+    margin: 1px;
+    width: 100%;
+    transition: all 0.3s ease;
+   
+
+
+}
+.menu-div-change,
+.menu-div3-change{
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: rgb(97, 77, 17);
+    margin: 1px;
+    transition: all 0.3s ease;
+
+
+}
+.menu-div3-change
+{
+    transform: translate(0, -2px) rotate(45deg);
+    
+}
+.menu-div-change
+{
+    transform: translate(0, 2.5px) rotate(-45deg);
+   
+   
+}
+
+
+
+.child_menu{
+    background : linear-gradient(40deg , rgba(51, 27, 12, 0.938) ,rgba(82, 46, 24, 0.897), rgba(51, 27, 17, 0.888) );
+    height: min(100%);
+    width: 20%;
+    margin: 2px;
+    margin-top:0;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    position: sticky;
+    color: rgb(119, 122, 126);
+    
+
+    
+}
+
+
+.menu-item{
+    text-decoration: none;
+    height: fit-content;
+    position: relative;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin: 2px;
+    color: rgba(240, 255, 255, 0.539);
+    
+    
+   
+
+}
+.menu-item:hover{
+    background-color: rgba(156, 158, 160, 0.32);
+    transform: scale(1.1);
+  
+    transition: all 0.3s ease;
+}
+.App-child2{
+  
+    width: 100%;
+    height:calc(100dvh - var(--head-hight) - 5px);
+    display: flex;
+    flex-direction: row;
+    position:absolute;
+    bottom: 1px;
+   
+   
+
+
+}
+.child1_left2,
+.child1_left{
+
+    width: 60%;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+ 
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+
+}
+.child1_left2{
+    width: 30%;
+
+}
+
+
+.App-content{
+    width: inherit;
+    height: cal(inherit -(--head-hight));
+    overflow-y: auto;
+    background-color:  #f7f3eddd;;
+
+}
+
+.search_bar{
+    width: 60%;
+    height: 30px;
+    background-color:transparent;
+    border:2px solid rgb(58, 36, 23);
+    border-radius: 2px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap : 10px;
+    
+   
+}
+
+ 
+.search_bar::placeholder{
+    color:rgb(51, 27, 12);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.search_bar  input{
+    height: 100%;
+    width: 85%;
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    
+}
+
+.search_bar button{
+    background-color: rgba(215, 167, 96, 0.308);
+    border: 1.5px solid transparent;
+    height:inherit;
+    border-radius: 5px;
+    border-left-color:rgba(255, 255, 255, 0.648) ;
+    border-right-color:rgba(255, 255, 255, 0.779) ;
+    box-shadow: 1px 1px 10px white; 
+    box-shadow: inset 1px 1px 10px white; 
+}
+.search_bar button:hover{
+    box-shadow: inset 0px 0px 0px  transparent; 
+    transform: scale(1.5) rotate(90deg);
+    transition: transform 0.5s ease;
+    background-color: transparent;
+}
+.search_bar button:active{
+    box-shadow:  1px 1px 10px  rgba(175, 123, 51, 0.39); 
+    transform: scale(1.05) rotate(90deg);
+    transition: all 0.5s ease;
+    background-color: transparent;
+}
+
+.search_bar select {
+  color: #3b2a20;
+  background: transparent;
+  height: inherit;
+  width: 40px;
+  border-color:transparent;
+  outline: 1px ;
+
+  
+
+
+}
+
+.search_bar select option {
+  color: #3b2a20;
+  background: #fffdf8;
+}
+
+
+.bell{
+   
+    height: 30px;
+    width: 30px;
+    color:rgb(51, 27, 12);
+}
+
+
+
+.child_profile1{
+    
+    background: linear-gradient(40deg , rgba(85, 49, 26, 0.938) ,rgba(128, 75, 42, 0.997), rgba(153, 88, 62, 0.988) );
+    height:auto;
+    width:240px;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    flex-direction:column;
+    justify-content :space-between;
+    border: 1px solid rgb(2, 11, 41);
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+
+
+}
+.profile_img_span{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgb(108, 61, 41);
+    background-color: rgba(237, 230, 209, 0.797);
+    align-self: center;
+    align-items: center;
+}
+.profile-span{
+    margin: 2px;
+    font-size: 15px;
+    background-color:rgba(237, 230, 209, 0.797);
+    color:rgb(108, 61, 41);;
+    padding: 5px;
+    padding-left: 10px;
+    border: 1px solid rgb(25, 19, 1);
+    box-shadow: inset 0px 0px 5px rgb(133, 72, 22);
+    border-radius: 5px;
+   
+}
+.edit_profile-btn{
+    background-color: transparent;
+    color: rgb(16, 1, 1);
+    padding: 5px;
+    border: 1px solid rgb(145, 98, 66);
+    border-radius: 5px;
+    margin-top: 10px;
+    align-self: center;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.96);
+}
+.edit_profile-btn:hover{
+    background-color:rgb(85, 49, 26);
+    transform: scale(1);
+    color: rgba(176, 93, 52, 0.559);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.login-logo{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap:10px
+
+}
+@media (max-width: 768px) {
+
+.usercircle{
+    display: none;
+}
+.appname2{
+    font-size: large;
+
+}
+
+.child1_left{
+    width: 70%;
+  
+}
+.child1_left2{
+    width:auto;
+
+}
+.search_bar select {
+    width: 30px;
+
+}
+.search_bar{
+    width:70%
+}
+
+
+
+}
+@media (max-width: 550px) {
+    .home-child1{
+    height: 50px;
+
+}
+.usercircle,
+.app_logo,
+.appname2{
+    display: none;
+}
+
+
+.profile_img{
+    
+    height: 30px;
+    width: 30px;
+}
+.child1_left{
+
+    width: 80%;
+  
+
+}
+.bell{
+    margin-left: 10px;
+    height: 24px;
+    width: 20px;
+    border-radius:50% ;
+   
+
+}
+
+.child_menu{
+    width: 40%;
+    gap: 10px;
+    
+}
+.App-child2{
+  
+    width: 100%;
+ 
+
+
+}
+
+.login_link{
+    font-size: 8px;
+    
+}
+
+}

@@ -1,0 +1,372 @@
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    min-height: 100vh;
+    background: #f7f0e3;
+    padding: 35px;
+    font-family: Arial, sans-serif;
+    color: #4a2f20;
+    box-sizing: border-box;
+}
+
+
+.transaction-info p{
+    color: rgb(94, 6, 6);
+    font-size: 10px;
+    margin: 1px;
+    padding: 0px;
+
+}
+
+/* =========================
+   TABS
+========================= */
+
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #d8c3aa;
+}
+
+.tab {
+    padding: 14px 25px;
+    background: #eadcc8;
+    color: #5a3825;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.tab:hover {
+    background: #d9c0a3;
+}
+
+.tab.active {
+    background: #6b432c;
+    color: #fff8ed;
+}
+
+
+/* =========================
+   TRANSACTION LIST
+========================= */
+
+#transactionList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* =========================
+   TRANSACTION CARD
+========================= */
+
+.transaction-card {
+    background: #fffaf2;
+    border: 1px solid #dfcdb7;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(91, 57, 37, 0.10);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.transaction-header h3 {
+    margin: 0;
+    color: #5a3825;
+    font-size: 21px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status.initiated {
+    background: #ead7b8;
+    color: #70451f;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    padding: 20px 0 30px;
+}
+
+.product {
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 180px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #d4bda3;
+    background: #eee0cc;
+    display: block;
+    margin: auto;
+}
+
+.product p {
+    margin: 7px 0;
+    font-size: 14px;
+    color: #6a4935;
+}
+
+.product p:first-of-type {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a2f20;
+}
+
+
+/* =========================
+   SWAP ARROW
+========================= */
+
+.swap-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #6b432c;
+    color: #fff8ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(91, 57, 37, 0.20);
+}
+
+
+/* =========================
+   TRANSACTION INFO
+========================= */
+
+.transaction-info {
+    background: #f4e8d7;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.transaction-info label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5a3825;
+    margin-top: 8px;
+}
+
+.transaction-info input,
+.transaction-info textarea,
+.cnl-rsn textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #cdb59a;
+    background: #fffaf2;
+    border-radius: 9px;
+
+    padding: 11px 12px;
+
+    font-size: 14px;
+    color: #4a2f20;
+
+    outline: none;
+}
+
+.transaction-info input:focus,
+.transaction-info textarea:focus,
+.cnl-rsn textarea:focus {
+    border-color: #6b432c;
+    box-shadow: 0 0 0 2px rgba(107, 67, 44, 0.10);
+}
+
+.transaction-info textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+
+/* =========================
+   COMPLETED BUTTON
+========================= */
+
+.cmplt-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #6b432c;
+    color: #fff8ed;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cmplt-btn:hover {
+    background: #4f301f;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.cancel-btn {
+    margin-top: 20px;
+    margin-left: 10px;
+
+    padding: 12px 25px;
+
+    border: 1px solid #8a5a3c;
+    border-radius: 9px;
+
+    background: transparent;
+    color: #6b432c;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #6b432c;
+    color: #fff8ed;
+}
+
+
+/* =========================
+   CANCEL REASON
+========================= */
+
+.cnl-rsn {
+    margin-top: 20px;
+    padding: 18px;
+
+    background: #f1e2d0;
+    border-left: 4px solid #6b432c;
+
+    border-radius: 10px;
+}
+
+.cnl-rsn label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+    color: #5a3825;
+}
+
+.cnl-rsn textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 18px;
+    }
+
+    .tabs {
+        gap: 5px;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    .transaction-card {
+        padding: 18px;
+    }
+
+    .transaction-header h3 {
+        font-size: 18px;
+    }
+
+    .products {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .swap-arrow {
+        transform: rotate(90deg);
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .product img {
+        width: 160px;
+        height: 190px;
+    }
+
+    .cmplt-btn,
+    .cancel-btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .cancel-btn {
+        margin-top: 10px;
+    }
+}

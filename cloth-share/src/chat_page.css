@@ -1,0 +1,263 @@
+.chat-parent {
+    width: 100%;
+    height: 90vh;
+  
+    background-color: aqua;
+    display: grid;
+    grid-template-columns:  250px 1fr   ;
+    gap: 20px;
+    background-color: rgba(250, 235, 215, 0.651);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.online_div{
+    display: flex;
+    flex-direction: column;
+   
+}
+.num{
+    background-color: rgba(147, 133, 66, 0.459);
+    border: 1px solid rgb(147, 133, 66);
+    text-align: center;
+    padding: 1px;
+    height:22px ;
+    width: 22px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+}
+
+
+
+/* LEFT SIDE */
+
+
+.user-msg,
+.friend-msg {
+    display: flex;
+    justify-content: start;
+    background-color: rgb(225, 198, 186);
+    padding: 0;
+    height: 10px;
+     border-radius: 20px;
+    padding: 10px;
+    
+
+     border-top-left-radius: 0px;
+
+    margin: 5px;
+    width: fit-content;
+    height: auto;
+    overflow-wrap:break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+.user-msg{
+    background-color: rgb(225, 213, 186);
+    align-self: flex-end;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+   
+   
+
+}
+.friend-msg p,
+.user-msg p {
+    margin: 0;
+}
+
+.chat-home {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+     background-color: antiquewhite;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+    z-index: 1;
+    
+
+    overflow-y: auto;
+}
+
+
+
+.chat-search  {
+    width: 90%;
+    height: 20px;
+  
+    
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px 10px;
+
+    font-weight: bold;
+}
+
+
+/* USERS */
+
+.chat-user {
+    width: 100%;
+    min-height: 60px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    gap: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.chat-user:hover {
+    background: #eee;
+}
+
+.user-image {
+    width: 42px;
+    height: 42px;
+    border: 2px solid black;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* RIGHT SIDE */
+
+.chat-container {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 70px 1fr 60px;
+   height: inherit ;
+     background-color: antiquewhite;
+    
+        z-index: -1;
+}
+
+
+/* HEADER */
+
+.chat-header {
+    
+    border: 2px solid  transparent;
+    background-color: rgba(212, 201, 188, 0.142);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    padding: 10px;
+    padding-bottom: 2px;
+    
+}
+.back_btn{
+    height: 50%;
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-color: black;
+    outline: none;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.Online {
+    font-size: 12px;
+    color: green;
+}
+.Offline{
+    font-size: 12px;
+    color: rgb(126, 19, 60);
+}
+
+
+/* MESSAGES */
+
+.chat-messages {
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* INPUT */
+
+.chat-input {
+    margin: 0 25px 15px;
+    border: 2px solid black;
+    border-radius: 18px;
+    background-color: rgb(242, 237, 237);
+
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px 10px;
+}
+
+.chat-input input {
+    background-color: transparent;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.chat-input button {
+    width: 35px;
+    height: 35px;
+
+    border:1px solid transparent;
+    background-color:transparent;
+    border-radius: 50%;
+    text-align: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.chat-input button:active{
+    transform:translateX(100px);
+  
+    transition: all 2s ease;
+
+}
+
+@media (max-width: 600px) {
+    .chat-parent {
+    padding: 0;
+    }
+
+    .chat-home {
+        margin: 1%;
+        width: 98%;
+          position: fixed;
+        box-sizing: border-box;
+   
+    }
+    .chat-container{
+        margin: 1%;
+        width: 98%;
+         position: fixed;
+        box-sizing: border-box;
+    }
+
+    /* phone styles */
+}

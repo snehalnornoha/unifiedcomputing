@@ -1,0 +1,343 @@
+:root {
+    --my-head-height: auto;
+
+    --bg-main: #f7f3ed;
+    --bg-card: #ffffff;
+    --text-main: #2d2a26;
+    --text-muted: #77716a;
+
+    --primary: #b58b62;
+    --primary-light: #eee2d3;
+
+    --border: #e6dfd6;
+    --shadow: 0 6px 20px rgba(45, 42, 38, 0.07);
+
+    --radius: 16px;
+}
+.my-list-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.my-list-head button{
+    height: 50%;
+    width: 60px;
+    box-sizing: border-box;
+    color:var( --primary-light);
+    background-color:var( --primary) ;
+    border-color: transparent;
+
+}
+.my-list-head button:hover{
+    color:var( --primary);
+    background-color:var( --primary-light) ;
+    transform: scale(1.05);
+    border-color: transparent;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.477);
+    transition: all 0.41s ease;
+    
+    
+}
+/* =========================
+   Main container
+========================= */
+
+.myListing_parent {
+    width: 100%;
+    height: inherit;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding: 24px;
+
+    background-color: transparent;
+    
+  
+
+
+    
+}
+
+
+/* =========================
+   Statistics header
+========================= */
+
+.My-list-head {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    height: max(100px ,30%);
+    
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding: 0;
+ 
+    background: transparent;
+    
+
+    box-sizing: border-box;
+    
+}
+
+
+/* =========================
+   Statistic card
+========================= */
+
+.num-mylist {
+    min-height: 95px;
+
+    padding: 18px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    box-shadow: var(--shadow);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.num-mylist:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 28px rgba(45, 42, 38, 0.10);
+}
+
+
+/* Statistic title */
+
+.head-title {
+    background: transparent;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* Statistic number */
+
+.num-mylist {
+    color: var(--text-main);
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Request / Listing sections
+========================= */
+
+.myRequest,
+.myLists {
+    width: 100%;
+    
+
+    height: max(400px ,70%);
+
+
+    padding: 20px;
+
+    background: var(--bg-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    box-sizing: border-box;
+    
+}
+.list-contenet{
+
+    display: flex;
+    flex-direction: column;
+     width: 100%;
+    height: 90%;
+    gap: 5px;
+     overflow-x: auto;
+    overflow-y: auto;
+}
+
+
+/* Prevent cards from becoming squeezed */
+
+.myRequest > *,
+.list-contenet > *,
+.myLists > * {
+    flex: 0 0 auto;
+}
+
+
+/* =========================
+   Section hover
+========================= */
+
+.myRequest,
+.myLists {
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.myRequest:hover,
+.myLists:hover {
+    border-color: #d8cbbb;
+
+    box-shadow:
+        0 10px 28px rgba(45, 42, 38, 0.09);
+}
+
+
+/* =========================
+   Scrollbar
+========================= */
+
+.myRequest::-webkit-scrollbar,
+.myLists::-webkit-scrollbar {
+    height: 6px;
+}
+
+.myRequest::-webkit-scrollbar-track,
+.myLists::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.myRequest::-webkit-scrollbar-thumb,
+.myLists::-webkit-scrollbar-thumb {
+    background: #d3c8bb;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+
+    .My-list-head {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    .myRequest,
+    .myLists {
+        min-height: 300px;
+        margin-top: 0px;
+        
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    .myListing_parent {
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+
+    .My-list-head {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .num-mylist {
+        min-height: 85px;
+
+        padding: 14px;
+    }
+
+
+    .head-title {
+        font-size: 12px;
+    }
+
+
+    .num-mylist {
+        font-size: 22px;
+    }
+
+
+    .myRequest,
+    .myLists {
+        min-height: 220px;
+
+        padding: 14px;
+
+        gap: 12px;
+
+        border-radius: 14px;
+        
+    }
+    .list-contenet{
+    
+    display: flex;
+    flex-direction: row;
+    
+    gap: 5px;
+     overflow-y: hidden;
+    overflow-x: auto;
+}
+}
+
+
+/* =========================
+   Very small screens
+========================= */
+
+@media (max-width: 380px) {
+
+    .My-list-head {
+        grid-template-columns: 1fr;
+    }
+
+
+    .num-mylist {
+        min-height: 75px;
+    }
+}

@@ -1,0 +1,149 @@
+/* Main page */
+.upload-page {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(245, 245, 220, 0.879);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    color:  rgb(227, 14, 14);
+}
+
+/* Heading */
+.upload-page h1 {
+    margin-bottom: 5px;
+    font-size: 32px;
+    align-self: center;
+}
+
+.upload-page > p {
+    margin-top: 0;
+    color: #666;
+}
+
+
+/* Form */
+.upload-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* Each section */
+.form-section {
+    padding: 25px;
+    border: 1px solid #d4c19b;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    background-color: rgb(243, 241, 227);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Section heading */
+.form-section h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+
+/* Labels */
+.form-section label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+
+/* Inputs + Select + Textarea */
+.h-input,
+.form-section input,
+.form-section select,
+.form-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+
+/* Focus */
+.h-input:focus,
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+    border-color: #555;
+}
+
+
+/* Textarea */
+.form-section textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* File input */
+.form-section input[type="file"] {
+    padding: 15px;
+    border: 2px dashed #bbb;
+    cursor: pointer;
+}
+
+
+/* Checkbox section */
+.form-section input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+
+/* Submit button */
+.smbt-btn{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(97, 89, 76, 0.557);
+    box-shadow: inset;
+  
+    font-size: 16px;
+    font-weight: 600;
+  
+    cursor: pointer;
+}
+
+.smbt-btn:active{
+     border-color:rgba(217, 170, 130, 0.906);
+     box-shadow: 0px 0px 10px rgba(195, 150, 25, 0.922);
+     color: rgb(173, 133, 94);
+
+}
+
+@keyframes hvr1 {
+    0% {
+        width: 0%;
+        background-color: #f5e6d393;
+    }
+
+    100% {
+        width: 100%;
+        background-color: #cbad8c5e;
+    }
+}

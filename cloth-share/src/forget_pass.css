@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+.forgot-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:transparent;
+  padding: 20px;
+}
+
+.forgot-card {
+  width: 100%;
+  max-width: 420px;
+  background:rgba(237, 230, 209, 0.797);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.forgot-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.forgot-header h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  color: #222;
+}
+
+.forgot-header p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.forgot-form,
+.otp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.otp-section {
+  margin-bottom: 22px;
+}
+
+.forgot-form label,
+.otp-section label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 8px;
+}
+
+.forgot-form input,
+.otp-section input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.2s;
+}
+
+.forgot-form input:focus,
+.otp-section input:focus {
+  border-color: #4f46e5;
+}
+
+.primary-btn {
+  width: 100%;
+  border: none;
+  padding: 13px;
+  margin-top: 8px;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #4338ca;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 18px;
+  padding: 10px;
+  border-radius: 7px;
+  background: #ecfdf5;
+  color: #059669;
+  text-align: center;
+  font-size: 14px;
+}
+
+.error-message {
+  margin-top: 18px;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: #dc2626;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .forgot-card {
+    padding: 25px 20px;
+  }
+
+  .forgot-header h2 {
+    font-size: 24px;
+  }
+}
