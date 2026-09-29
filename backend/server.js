@@ -12,6 +12,7 @@ import {test_jwt_refresh} from './middle_ware/auth.js'
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { initSocket } from "./socket.js";
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 
 
@@ -36,7 +37,7 @@ const server = createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: FRONTEND_URL,
         credentials: true
     }
 });
@@ -52,7 +53,7 @@ initSocket(io,users);
 
 //----serever----
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: FRONTEND_URL,
     credentials: true
 }));
 app.use(express.json())
