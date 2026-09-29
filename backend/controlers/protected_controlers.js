@@ -223,17 +223,8 @@ export const send__myKart= async(req , res , next )=>{
     console.log(req.body)
     console.log("hi iam here in send__myKart" , user_id)
     try{
-    if(ishist){
-        const ans = await get__myhist_db(user_id)
-         console.log(ans)
-        if(ans.success){
-             hist = ans
-        }
-         else{
-            throw new Error("serever error")
-        }
-    }
-    if(iswish){
+
+     if(iswish){
         const ans2 = await get__myWish_db(user_id)
          console.log(ans2)
          if(ans2.success){
@@ -244,6 +235,17 @@ export const send__myKart= async(req , res , next )=>{
         }
 
     }
+    if(ishist){
+        const ans = await get__myhist_db(user_id)
+         console.log(ans)
+        if(ans.success){
+             hist = ans
+        }
+         else{
+            throw new Error("serever error")
+        }
+    }
+   
      return res.status(200).json({
             success: true,
             hist: hist,
@@ -253,7 +255,11 @@ export const send__myKart= async(req , res , next )=>{
     }
     catch(error){
         console.log(error)
-        next(error)
+        return res.status(200).json({
+            success: false,
+            hist: [],
+            wish: []
+        });
 
     } 
   

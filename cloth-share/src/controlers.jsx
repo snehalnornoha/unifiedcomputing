@@ -101,7 +101,7 @@ export async function get_my_Request(is_refresh) {
 
 
 export async function get_my_Kart(iswish,ishist,is_refresh) {
-    console.log("getting request")
+    console.log("getting request" ,ishist,iswish)
     
     try {
         console.log("iam here")
