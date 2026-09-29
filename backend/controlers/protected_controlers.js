@@ -621,14 +621,14 @@ export const logout = (req, res) => {
     try {
         res.clearCookie("accessToken", {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax"
+            secure: true,
+            sameSite: "none"
         });
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax"
+            secure: true,
+            sameSite: "none"
         });
 
         return res.json({

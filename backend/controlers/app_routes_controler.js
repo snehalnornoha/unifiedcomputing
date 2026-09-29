@@ -24,7 +24,7 @@ const sign_name = (res , username ,toke_name,secrete_key , exptime ) =>{
     res.cookie(toke_name, token, {
     httpOnly: true,
     secure: false,
-    sameSite: "lax"
+    sameSite: "none",
   });
 
 
