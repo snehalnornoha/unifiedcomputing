@@ -164,6 +164,7 @@ function Start_page(prop){
         else{
                 console.log("not-refreshing") ; 
                 setItem_List(prop.need_refresh.current.data)
+                console.log("done")
                 return
 
        
