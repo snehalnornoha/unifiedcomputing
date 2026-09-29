@@ -71,11 +71,13 @@ function Kart(prop){
              console.log(res)
      
              if (res.ok) {
-                console.log("delete")
+                console.log("delete",selected_item)
                  const data = await res.json();
                   const DT =myLists.filter(item => item.id !== selected_item.id);
+                  console.log(DT)
                   setMyList(DT)
                     prop.wishList.current.data = DT
+                    console.log("wishlist ",prop.wishList.current)
                     setIsloading(false)
 
                 return 
