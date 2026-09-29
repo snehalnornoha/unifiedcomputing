@@ -73,9 +73,9 @@ function Kart(prop){
              if (res.ok) {
                 console.log("delete")
                  const data = await res.json();
-                  setMyList(prev =>
-                prev.filter(item => item.id !== selected_item.id)
-                    );
+                  const DT =myLists.filter(item => item.id !== selected_item.id);
+                  setMyList(DT)
+                    prop.wishList.current.data = DT
                     setIsloading(false)
 
                 return 
