@@ -25,7 +25,7 @@ function Kart(prop){
 
     useEffect(( ) => {
         console.log("does")
-        if(prop.wishList.current.check && prop.history.current.check){
+        if(!prop.wishList.current.check && !prop.history.current.check){
             setMyHistory(prop.history.current.data)
             setMyList(prop.wishList.current.data)
             return

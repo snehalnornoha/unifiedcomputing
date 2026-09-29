@@ -185,13 +185,16 @@ export const send_liked = async (prduct_id,is_refresh) => {
                 prod_id: prduct_id
             })
         });
+        if(res.ok){
+            return {success :true}
+        }
 
         if (res.status === 401 && is_refresh) {
             const refreshed = await refrsh_jwt_token();
 
             if (refreshed.success) {
                 console.log("hi token rfreshed ")
-                return send_liked(false);
+               send_liked(false);
             }
         }
 
@@ -200,5 +203,6 @@ export const send_liked = async (prduct_id,is_refresh) => {
 
     } catch (error) {
         console.error("Error sending like:", error);
+        return {success :false}
     }
 };
