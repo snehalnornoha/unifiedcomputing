@@ -13,6 +13,7 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import { initSocket } from "./socket.js";
 const FRONTEND_URL = process.env.FRONTEND_URL;
+import { pool } from '../configs/database_config.js';
 
 
 
