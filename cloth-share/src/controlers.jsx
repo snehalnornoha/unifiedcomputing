@@ -83,7 +83,7 @@ export async function get_my_Request(is_refresh) {
 
             if (refreshed.success) {
                 console.log("hi token rfreshed ")
-                return get_my_Listing(false);
+                return get_my_Request(false);
             }
         }
 
@@ -100,8 +100,8 @@ export async function get_my_Request(is_refresh) {
 //get_my_WishList ,get_my_History
 
 
-export async function get_my_Kart(iswish,ishist,is_refresh) {
-    console.log("getting request" ,ishist,iswish)
+export async function get_my_History(is_refresh) {
+    console.log("getting request" )
     
     try {
         console.log("iam here")
@@ -111,7 +111,7 @@ export async function get_my_Kart(iswish,ishist,is_refresh) {
             headers :{
               "Content-Type" : "application/json"
             },
-            body : JSON.stringify({iswish :iswish , ishist :ishist})
+            body : JSON.stringify({offset : 1})
         });
         console.log(res)
 
@@ -126,7 +126,7 @@ export async function get_my_Kart(iswish,ishist,is_refresh) {
 
             if (refreshed.success) {
                 console.log("hi token rfreshed ")
-                return get_my_Listing(false);
+                return get_my_History(false);
             }
         }
 
@@ -144,7 +144,7 @@ export async function get_my_WishList(is_refresh) {
     
     try {
         console.log("iam here")
-        const res = await fetch(`${API_URL}/protectedApi/get_my_WishList`, {
+        const res = await fetch(`${API_URL}/protectedApi/get_wishList`, {
             credentials: "include"
         });
         console.log(res)
@@ -160,7 +160,7 @@ export async function get_my_WishList(is_refresh) {
 
             if (refreshed.success) {
                 console.log("hi token rfreshed ")
-                return get_my_Listing(false);
+                return get_my_WishList(false);
             }
         }
 

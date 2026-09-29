@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './my_Listing.css'
 
 
-import { get_my_Kart,refrsh_jwt_token} from './controlers.jsx';
+import {refrsh_jwt_token ,get_my_History ,get_my_WishList} from './controlers.jsx';
 import {Kart_card ,Hist_card, Loading}  from './Kart.jsx'
 import { useRef } from 'react';
 import SharePage from "./share_page";
@@ -24,31 +24,32 @@ function Kart(prop){
     
 
     useEffect(( ) => {
-        console.log("does")
-        if(!prop.wishList.current.check && !prop.history.current.check){
-            setMyHistory(prop.history.current.data)
-            setMyList(prop.wishList.current.data)
-            return
+        console.log("does",prop.wishList.current.check,prop.history.current.check)
+         const get_items = async () => {
+        if(!prop.wishList.current.check){ 
+            setMyList(prop.wishList.current.data) 
         }
-        const get_items = async () => {
-            const ans = await get_my_Kart(prop.wishList.current.check , prop.history.current.check,true)
-            console.log(ans)
-            if(ans.hist?.success && prop.history.current.check){    
-                hist_next.current = ans.hist?.hasMore
+        else{
+            const ans =await get_my_WishList(true)
+            prop.wishList.current.data = ans.wish.data
+            console.log("wishList after get",prop.wishList.current)
+            prop.wishList.current.check = false    
+            setMyList(ans.wish.data)
+        }
+        if(!prop.history.current.check){
+            setMyHistory(prop.history.current.data)
+        }
+        else{
+            const ans = await get_my_History(true)
+            hist_next.current = ans.hist?.hasMore
                 prop.history.current.data = ans.hist.data
                 prop.history.current.check = false    
                 setMyHistory(ans.hist.data)
-            }
-            else{
-                setMyHistory(prop.history.current.data)
-            }
-            if(ans.hist?.success && prop.history.current.check){   
-                prop.wishList.current.check = false
-                prop.wishList.current.data = ans.wish.data
-                setMyList(ans.wish.data)
-            }  
-             setMyList(prop.wishList.current.data )
         }
+    }
+
+       
+           
 
         get_items()
         
@@ -71,7 +72,7 @@ function Kart(prop){
              console.log(res)
      
              if (res.ok) {
-                console.log("delete",selected_item)
+                console.log("delete",selected_item.id)
                  const data = await res.json();
                   const DT =myLists.filter(item => item.id !== selected_item.id);
                   console.log(DT)

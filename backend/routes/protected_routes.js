@@ -5,7 +5,7 @@ import { cloth_share_upload ,handle_get_user_info ,handle_get_owner_info,
         send__myKart,upadte_like ,handle_cmplt_trnctn,get_all_chats ,logout} from '../controlers/protected_controlers.js'
 
 import {del_wishList ,del_swapRequest ,del_clothing , all_resreqs ,get_multi_owner ,hanlde_accept_req ,get_friends,
-        get_transactions ,handle_cncl_trnctn,get_all_noti,handle_notiSeen,handle_read_cht,handle_updtprofimg} from '../controlers/protected_controlers.js'
+        get_transactions ,handle_cncl_trnctn,get_all_noti,handle_notiSeen,handle_read_cht,handle_updtprofimg,send__wishList} from '../controlers/protected_controlers.js'
 
 
 const p_routes = express.Router()
@@ -16,8 +16,9 @@ p_routes.get('/get_user_info',handle_get_user_info)
 p_routes.post('/get_owner_info',handle_get_owner_info)
 p_routes.put('/edit_profile',handle_edit_profile)
 p_routes.get('/get_myListings',send__myListing)
-p_routes.get('/get_myRequests',send__myRequest)
+p_routes.get('/get_myReuests',send__myRequest)
 p_routes.post('/get_myKart',send__myKart)
+p_routes.get('/get_wishList',send__wishList)
 
 
 p_routes.get('/all_resreqs',all_resreqs)

@@ -216,25 +216,10 @@ export const send__myRequest = async(req , res , next )=>{
 
 export const send__myKart= async(req , res , next )=>{
     const user_id = req.user_id 
-    const  iswish =  req.body.iswish
-    const ishist = req.body.ishist
-    let hist ={success : false} 
-    let wish = {success : false} 
-    console.log(req.body)
-    console.log("hi iam here in send__myKart" , user_id)
+    let hist = []
+   
     try{
 
-        const ans2 = await get__myWish_db(user_id)
-         console.log(ans2)
-         if(ans2.success){
-             wish  = ans2
-        }
-        else{
-            throw new Error("serever error")
-        }
-
-
-  
         const ans = await get__myhist_db(user_id)
          console.log(ans)
         if(ans.success){
@@ -248,7 +233,7 @@ export const send__myKart= async(req , res , next )=>{
      return res.status(200).json({
             success: true,
             hist: hist,
-            wish: wish
+        
         });
     
     }
@@ -257,6 +242,40 @@ export const send__myKart= async(req , res , next )=>{
         return res.status(200).json({
             success: false,
             hist: [],
+         
+        });
+
+    } 
+  
+    
+
+}
+export const send__wishList= async(req , res , next )=>{
+    const user_id = req.user_id 
+    let wish = []
+   
+    try{
+
+        const ans2 = await get__myWish_db(user_id)
+         console.log(ans2)
+         if(ans2.success){
+             wish  = ans2
+        }
+        else{
+            throw new Error("serever error")
+        }
+
+
+     return res.status(200).json({
+            success: true,
+            wish: wish
+        });
+    
+    }
+    catch(error){
+        console.log(error)
+        return res.status(200).json({
+            success: false,
             wish: []
         });
 
@@ -304,7 +323,15 @@ export const upadte_like= async(req ,res, next)=>{
     console.log(req.body)
     console.log("ima in upadte like ",user_id,prod_id)
     const ans = await add_to_wishlist(user_id ,prod_id)
-    return res,json({ans});
+    console.log(ans)
+    if(ans.success){
+        return res.json({ ans });  
+    }
+    else{
+        const er = new Error("something went wrong pls try again")
+        next(er)
+    } 
+   
     
 }
 
@@ -626,14 +653,14 @@ export const logout = (req, res) => {
     try {
         res.clearCookie("accessToken", {
             httpOnly: true,
-            secure: true,
-            sameSite: "none"
+            secure: true, // Set to true if using HTTPS
+            sameSite:"none" // Adjust this based on your needs
         });
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            secure: true,
-            sameSite: "none"
+            secure: true, // Set to true if using HTTPS
+            sameSite:"none" // Adjust this based on your needs
         });
 
         return res.json({
