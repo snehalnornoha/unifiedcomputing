@@ -36,7 +36,7 @@ const options = {
 };
 
 
- function UploadClothing() {
+ function UploadClothing(prop) {
   const {register,handleSubmit,formState: { errors, isSubmitting },} = useForm({
                                                                           defaultValues: datafields,
                                                                         });
@@ -98,6 +98,7 @@ const handleImages = (e) => {
                 console.log(res.ok)
                 if(res.ok){
                   const body = await res.json();
+                  prop.need_refresh.current.search = true
                   navi("/myList")
                 }
                 else if (res.status === 401 && is_refresh) {
@@ -201,7 +202,7 @@ const handleImages = (e) => {
 
           <input
             type="text"
-            placeholder="e.g. Black Oversized T-Shirt"
+            placeholder="e.g. your name"
             {...register("name", {
               required: "Name is required",
             })}
@@ -522,7 +523,7 @@ const handleImages = (e) => {
           }
 
           {/* Estimated Value */}
-          <label>Estimated Value ₹</label>
+          <label>Estimated Value </label>
 
           <input
             type="number"

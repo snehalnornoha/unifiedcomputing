@@ -529,7 +529,7 @@ useEffect( ()=> {
                 <Route path= "/wish" element={<Kart wishList ={wishList} history ={history}  all_users_requests= {all_users_requests}  />} />
                 <Route path= "/myList" element={<MyListing  all_users_requests= {all_users_requests}  wishList = {wishList}/>} />
                 <Route path= "/chat" element={<Chat_page  user_info ={user_info} socket = {socketRef} All_chats ={All_chats} noti_length = {noti_length} onlineFriend = {onlineFriend} friends = {friends}/>} />
-                <Route path= "/clothUpload" element={<UploadClothing/>} />
+                <Route path= "/clothUpload" element={<UploadClothing  need_refresh = {need_refresh} />} />
                 <Route path= "/logpage" element={<Auth setIslogedin ={setIslogedin}/>} />
                 <Route path='/reset'  element={<ForgotPassword/>} />
                 <Route path='/edit_profile'  element={<Start_page searching_factor = {searching_factor} setIn_c_profile ={"undefined"} need_refresh = {need_refresh}
