@@ -261,7 +261,7 @@ body{
 }
 
 .search_bar button{
-    background-color: rgba(215, 167, 96, 0.308);
+    background-color:transparent;
     border: 1.5px solid transparent;
     height:inherit;
     border-radius: 5px;
@@ -378,6 +378,7 @@ body{
 }
 @media (max-width: 768px) {
 
+
 .usercircle{
     display: none;
 }
@@ -409,6 +410,18 @@ body{
     .home-child1{
     height: 50px;
 
+}
+.child1_left2{
+    width: 20%;
+    
+}
+.Menu_btn{
+    height: 25px;
+    width: 23px;
+}
+.app_logo{
+    height: 30px;
+    width: 30px;
 }
 .usercircle,
 .appname2{
