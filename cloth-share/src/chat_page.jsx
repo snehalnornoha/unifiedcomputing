@@ -55,7 +55,7 @@ function Chat_page(prop){
     const [friend_id , setFriend_id]= useState(null)
     const [selectedfriend , setSelectedfriend]= useState(null)
     const [friendChats ,setFriendChats ]= useState([]);
-    console.log("hbbjhbbj->",prop.user_info.current)
+    
 
     const okSend = () =>{
         console.log(friend_id)
