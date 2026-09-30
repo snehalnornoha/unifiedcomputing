@@ -132,6 +132,7 @@
 /* RIGHT SIDE */
 
 .chat-container {
+    position: relative;
     border: 2px solid black;
     border-radius: 10px;
     display: grid;
@@ -200,6 +201,8 @@
     border: 2px solid black;
     border-radius: 18px;
     background-color: rgb(242, 237, 237);
+    position: sticky;
+    bottom: 10px;
 
 
     display: flex;

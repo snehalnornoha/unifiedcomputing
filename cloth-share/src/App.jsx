@@ -129,7 +129,7 @@ function App() {
     if(cht.is_read || cht.msgfrom === uuid ){return}
     console.log(cht.msgfrom === user_info.current.data.id )
     Notification.current.data = [...Notification.current.data , 
-                                { id: cht.id, type: "chat-msg", msg: `msg : ${cht.msg}` }]
+                                {created_at :cht.created_at ,id: cht.id, type: "chat-msg", msg: `msg : ${cht.msg}` }]
 
   }
 

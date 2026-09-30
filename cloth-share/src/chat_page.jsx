@@ -65,6 +65,8 @@ function Chat_page(prop){
         }
         setTotal_chats(prev => [...prev , {msgto: friend_id ,msgfrom:user_id.current , msg:msg_text}])
         prop.socket.current.emit("send_message", {To: friend_id , From:user_id.current , msg:msg_text});
+             prop.All_chats.current.data = [...prop.All_chats.current.data , {msgto: friend_id ,msgfrom:user_id.current , msg:msg_text}]
+             console.log("all chats",prop.All_chats.current.data)
      
         setFriendChats(prev =>
             prev.map(friend =>
@@ -76,6 +78,7 @@ function Chat_page(prop){
                     : friend
             )
         );
+   
           
         console.log("skhjjjjjjjjjjjjjjjj",friendChats)
           

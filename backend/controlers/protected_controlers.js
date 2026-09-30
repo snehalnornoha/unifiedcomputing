@@ -653,14 +653,14 @@ export const logout = (req, res) => {
     try {
         res.clearCookie("accessToken", {
             httpOnly: true,
-            secure: true, // Set to true if using HTTPS
-            sameSite:"none" // Adjust this based on your needs
+            secure: false, // Set to true if using HTTPS
+            sameSite:"lax" // Adjust this based on your needs
         });
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            secure: true, // Set to true if using HTTPS
-            sameSite:"none" // Adjust this based on your needs
+            secure: false, // Set to true if using HTTPS
+            sameSite:"lax" // Adjust this based on your needs
         });
 
         return res.json({
